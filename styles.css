@@ -1,0 +1,184 @@
+/* Assumption: Browser supports flex */
+body, html {
+	padding: 0;
+	margin: 0;
+	font-family: sans-serif;
+}
+
+.font-12 {
+	font-size: 12px;
+}
+
+.flex {
+	display: flex;
+}
+
+.footer {
+	background: #EFEFEF;
+}
+
+.justify-content-center {
+	justify-content: center;
+}
+
+.container {
+	max-width: 960px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.body-div {
+	border-top: 4px solid #ccc;
+	background: #EFEFEF;
+}
+
+.number-block-container {
+	list-style: none;
+	flex-wrap: wrap;
+	width: 75%;
+	margin: 0;
+	padding: 0;
+}
+
+.number-block-container .number-block {
+	width: 240px;
+	height: 240px;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+	color: #FFFFFF;
+	font-size: 100px;
+}
+/* NOTE: Colors provided were incomplete, hence changed a few. */
+.number-block.one {
+	background: #6F98A8;
+}
+.number-block.two {
+	background: #3186AA;
+}
+.number-block.three {
+	background: #445A62;
+}
+.number-block.four {
+	background: #2B8EAD;
+}
+.number-block.five {
+	background: #293C43;
+}
+.number-block.six {
+	background: #BFBFBF;
+}
+.number-block.seven {
+	background: #D6D6D6;
+}
+.number-block.eight {
+	background: #72C3DC;
+}
+.number-block.nine {
+	background: #2F454E;
+}
+
+.btn-container {
+	width: 25%;
+}
+.btn-container .btn {
+	padding: 16px 20px;
+	border-radius: 10px;
+	width: 75%;
+	margin-top: 30px;
+	color: #FFFFFF;
+	background: #72C3DC;
+	border: 0;
+	border-bottom: 6px solid #2B8EAD;
+	outline: none;
+	cursor: pointer;
+}
+.btn-container .btn:active {
+	transform: translateY(2px);
+}
+
+@media only screen and (max-width: 960px) {
+	.number-block-container .number-block {
+		width: 33.3%;
+		height: 33.3%;
+		font-size: 60px;
+	}
+	.btn-container .btn {
+		padding: 16px 10px;
+		width: 85%;
+	}
+}
+
+@media only screen and (max-width: 376px) {
+	.header {
+		background: #333333;
+		color: #FFFFFF;
+		display: flex;
+		justify-content: center;
+	}
+	.body-div {
+		border-top: 0;
+		background: #FFFFFF;
+		flex-direction: column-reverse;
+		padding: 0 20px;
+	}
+	.number-block-container,
+	.btn-container {
+		width: 100%;
+	}
+	.number-block-container .number-block {
+		width: 100%;
+		height: 40px;
+		color: #000000;
+		background: #EFEFEF;
+		font-size: 16px;
+		margin-bottom: 4px;
+	}
+
+	.number-block.one,
+	.number-block.two,
+	.number-block.three,
+	.number-block.four,
+	.number-block.five,
+	.number-block.six,
+	.number-block.seven,
+	.number-block.eight,
+	.number-block.nine {
+		border-left-width: 10px;
+		border-left-style: solid;
+	}
+	.number-block.one {
+		border-color: #6F98A8;
+	}
+	.number-block.two {
+		border-color: #3186AA;
+	}
+	.number-block.three {
+		border-color: #445A62;
+	}
+	.number-block.four {
+		border-color: #2B8EAD;
+	}
+	.number-block.five {
+		border-color: #293C43;
+	}
+	.number-block.six {
+		border-color: #BFBFBF;
+	}
+	.number-block.seven {
+		border-color: #D6D6D6;
+	}
+	.number-block.eight {
+		border-color: #72C3DC;
+	}
+	.number-block.nine {
+		border-color: #2F454E;
+	}
+	.btn-container .btn {
+		width: auto;
+		margin: 10px 0;
+	}
+	.footer {
+		background: #FFFFFF;
+	}
+}
