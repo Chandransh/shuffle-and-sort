@@ -4,7 +4,7 @@ const sortBtn = document.getElementById("sort-btn");
 shuffleBtn.addEventListener("click", function() {
 	const numberBlocks = document.querySelectorAll(".number-block-container > .number-block");
 	let totalBlocksLength = numberBlocks.length;
-    let randomIndex;
+	let randomIndex;
 
     while (totalBlocksLength > 0) {
     	// Generate random number between 0 and `totalBlocksLength` inclusive of 0
