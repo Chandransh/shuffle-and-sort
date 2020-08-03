@@ -6,7 +6,7 @@ shuffleBtn.addEventListener("click", function() {
 	let totalBlocksLength = numberBlocks.length;
 	let randomIndex;
 
-    while (totalBlocksLength > 0) {
+    while(totalBlocksLength > 0) {
     	// Generate random number between 0 and `totalBlocksLength` inclusive of 0
         randomIndex = Math.floor(Math.random() * totalBlocksLength);
 
@@ -20,9 +20,9 @@ shuffleBtn.addEventListener("click", function() {
 sortBtn.addEventListener("click", function() {
 	const numberBlocksContainer = document.querySelector(".number-block-container");
 
-	const sortedListItems = [...numberBlocksContainer.children].sort(function(a,b) {
-		return a.innerText > b.innerText ? 1 : -1;
-	});
+	const sortedListItems = [...numberBlocksContainer.children].sort((a, b) =>
+		a.innerText > b.innerText ? 1 : -1
+	);
 
 	sortedListItems.forEach(function(node) {
 		// Appending an existing node will move it to its new position.
