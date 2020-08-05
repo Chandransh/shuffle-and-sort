@@ -1,4 +1,4 @@
-/* Assumption: Browser supports flex */
+/* Browser support for CSS grid: https://caniuse.com/#feat=css-grid */
 body, html {
 	padding: 0;
 	margin: 0;
@@ -9,8 +9,8 @@ body, html {
 	font-size: 12px;
 }
 
-.flex {
-	display: flex;
+.grid {
+	display: grid;
 }
 
 .footer {
@@ -34,20 +34,18 @@ body, html {
 
 .number-block-container {
 	list-style: none;
-	flex-wrap: wrap;
-	width: 75%;
+	grid-template-columns: repeat(4, 240px);
+	grid-template-rows: repeat(3, 240px);
 	margin: 0;
 	padding: 0;
 }
 
 .number-block-container .number-block {
-	width: 240px;
-	height: 240px;
-	display: flex;
+	display: grid;
 	align-items: center;
-    justify-content: center;
-	color: #FFFFFF;
 	font-size: 100px;
+	color: #FFFFFF;
+	box-sizing: border-box;
 }
 
 /* NOTE: Colors provided were incomplete, hence changed a few. */
@@ -88,13 +86,14 @@ body, html {
 }
 
 .btn-container {
-	width: 25%;
+	grid-row: 1 / 4;
+	grid-column: 4;
 }
 
 .btn-container .btn {
-	padding: 16px 20px;
-	border-radius: 10px;
+	padding: 16px 0;
 	width: 75%;
+	border-radius: 10px;
 	margin-top: 30px;
 	color: #FFFFFF;
 	background: #72C3DC;
@@ -108,46 +107,41 @@ body, html {
 	transform: translateY(2px);
 }
 
-@media only screen and (max-width: 960px) {
-	.number-block-container .number-block {
-		width: 33.3%;
-		height: 33.3%;
-		font-size: 60px;
+@media only screen and (max-width: 959px) {
+	.number-block-container {
+		grid-template-columns: repeat(4, auto);
+		grid-template-rows: repeat(3, auto);
 	}
 
-	.btn-container .btn {
-		padding: 16px 10px;
-		width: 85%;
+	.number-block-container .number-block {
+		font-size: 60px;
 	}
 }
 
-@media only screen and (max-width: 376px) {
+@media only screen and (max-width: 375px) {
 	.header {
 		background: #333333;
 		color: #FFFFFF;
-		display: flex;
-		justify-content: center;
+		display: grid;
 	}
 
 	.body-div {
 		border-top: 0;
 		background: #FFFFFF;
-		flex-direction: column-reverse;
 		padding: 0 20px;
 	}
 
-	.number-block-container,
-	.btn-container {
-		width: 100%;
+	.number-block-container {
+		grid-template-columns: auto;
 	}
 
 	.number-block-container .number-block {
-		width: 100%;
 		height: 40px;
 		color: #000000;
 		background: #EFEFEF;
 		font-size: 16px;
 		margin-bottom: 4px;
+		grid-column: 1;
 	}
 
 	.number-block.one,
@@ -199,8 +193,12 @@ body, html {
 		border-color: #2F454E;
 	}
 
+	.btn-container {
+		grid-column: 1
+	}
+
 	.btn-container .btn {
-		width: auto;
+		width: 30%;
 		margin: 10px 0;
 	}
 
